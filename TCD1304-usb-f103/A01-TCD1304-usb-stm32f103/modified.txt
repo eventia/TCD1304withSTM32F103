@@ -1,2 +1,33 @@
 # 수정 : 2022.12.20.
 
+주요 파라미터 
+
+
+
+/* GPIOs for the TCD1304 are:
+    PA1	- OS (ADC-in)
+    PA15- fM   TIM2 C1 
+    PB4 - SH   TIM3 C1 
+    PA10- ICG  TIM1 C3 */
+
+[main.h]==========
+
+#define CCDSize 3694
+#define CCD_fm 800000    // 1000000 수정해 볼 것
+#define SH_delay 11
+#define ICG_delay 11
+#define fm_delay 3
+
+
+[main.c]==========
+
+__IO uint32_t SH_period = 25;
+__IO uint32_t ICG_period = 65000;    // SH_period , ICG_period 는 시리얼을 통한 외부 수정 가능 
+__IO uint8_t pulse_counter = 0;
+__IO uint8_t CCD_flushed = 0;
+__IO uint8_t change_exposure_flag = 0;
+__IO uint8_t avg_exps = 0;
+__IO uint8_t exps_left = 0;
+__IO uint8_t data_flag = 0;
+__IO uint8_t coll_mode = 0;
+

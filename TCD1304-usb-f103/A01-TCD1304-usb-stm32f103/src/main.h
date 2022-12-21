@@ -16,8 +16,8 @@
    1-2MHz with the STM32F401RE running at 84 MHz. Other frequencies
    are achievable when prescaling APB1 differently. 1 MHz does not
    seem to work well. */
-#define CCD_fm 800000
-//#define CCD_fm 1000000
+//#define CCD_fm 800000
+#define CCD_fm 1000000
 //#define CCD_fm 2000000
 
 /*  Comply with the CCD's timing requirements:
